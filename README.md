@@ -4,7 +4,7 @@ Kumpulan 10 tema website travel dalam satu repo. Daftar tema ada di `src/lib/por
 
 | Route | Isi |
 |---|---|
-| `/` | Galeri portfolio (10 tema) |
+| `/` | Dashboard koleksi (10 tema): ringkasan, filter status, pencarian, tampilan grid/tabel |
 | `/hastrans` | 1. HasTrans: travel antar kota, versi lengkap + admin (`/hastrans/admin`) |
 | `/sayap-shuttle` | 2. Sayap Shuttle: shuttle bandara, tema Dark Modern (demo, tanpa database) |
 | `/kencana-executive` | 3. Kencana Executive: sewa mobil premium, tema Luxury |

@@ -69,7 +69,7 @@ export function SayapFooter() {
         </div>
       </div>
       <div className="border-t border-sayap-line py-5 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} Sayap Shuttle · Demo dari{" "}
+        © {new Date().getFullYear()} Sayap Shuttle · Website oleh{" "}
         <Link href="/" className="text-sayap-lime hover:underline">
           Yubu Travel Portfolio
         </Link>

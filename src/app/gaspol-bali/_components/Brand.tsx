@@ -81,7 +81,7 @@ export function GaspolFooter() {
           WA 24 jam +{GASPOL_WA}
           <br />
           Pool: Jl. Batu Bolong, Canggu
-          <br />© {new Date().getFullYear()} Gaspol Bali · Demo dari{" "}
+          <br />© {new Date().getFullYear()} Gaspol Bali · Website oleh{" "}
           <Link href="/" className="text-gaspol-pink underline">
             Yubu Travel Portfolio
           </Link>

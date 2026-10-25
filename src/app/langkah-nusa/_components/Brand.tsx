@@ -59,7 +59,7 @@ export function NusaFooter() {
         </div>
         <p className="text-sm text-nusa-cream/70 md:text-right">
           WhatsApp +{NUSA_WA}
-          <br />© {new Date().getFullYear()} Langkah Nusa · Demo dari{" "}
+          <br />© {new Date().getFullYear()} Langkah Nusa · Website oleh{" "}
           <Link href="/" className="text-nusa-sage underline">
             Yubu Travel Portfolio
           </Link>

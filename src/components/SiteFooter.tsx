@@ -71,7 +71,7 @@ export function SiteFooter({ settings }: { settings: Settings }) {
         </div>
       </div>
       <div className="border-t border-slate-100 py-5 text-center text-xs text-slate-400">
-        © {new Date().getFullYear()} HasTrans. Travel Antar Kota. · Demo dari{" "}
+        © {new Date().getFullYear()} HasTrans. Travel Antar Kota. · Website oleh{" "}
         <Link href="/" className="text-brand-600 hover:underline">
           Yubu Travel Portfolio
         </Link>

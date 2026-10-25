@@ -61,7 +61,7 @@ export function RiaFooter() {
         <div className="text-sm text-ria-cream/70 md:text-right">
           © {new Date().getFullYear()} Armada Ria
           <br />
-          Demo dari{" "}
+          Website oleh{" "}
           <Link href="/" className="text-ria-yellow underline">
             Yubu Travel Portfolio
           </Link>

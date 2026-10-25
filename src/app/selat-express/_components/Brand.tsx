@@ -55,7 +55,7 @@ export function SelatFooter() {
         </div>
         <p className="text-sm md:text-right">
           WhatsApp +{SELAT_WA} · Loket: Pantai Sanur
-          <br />© {new Date().getFullYear()} Selat Express · Demo dari{" "}
+          <br />© {new Date().getFullYear()} Selat Express · Website oleh{" "}
           <Link href="/" className="text-selat-aqua underline">
             Yubu Travel Portfolio
           </Link>

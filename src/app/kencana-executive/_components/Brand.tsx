@@ -54,7 +54,7 @@ export function KencanaFooter() {
         </p>
         <div className="mt-8 h-px w-16 bg-kencana-gold/40" />
         <p className="mt-6 text-xs text-kencana-ivory/40">
-          © {new Date().getFullYear()} Kencana Executive · Demo dari{" "}
+          © {new Date().getFullYear()} Kencana Executive · Website oleh{" "}
           <Link href="/" className="text-kencana-gold hover:underline">
             Yubu Travel Portfolio
           </Link>

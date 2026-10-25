@@ -6,7 +6,8 @@ const font = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Yubu Travel Portfolio",
-  description: "Kumpulan desain website travel: antar kota, shuttle bandara, sewa mobil, bus pariwisata, open trip, dan lainnya.",
+  description: "Koleksi website travel siap pakai: travel antar kota, shuttle bandara, sewa mobil, bus pariwisata, open trip, umroh, rental motor, fast boat, dan lainnya.",
+  icons: { icon: "/yubu/icon.png" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

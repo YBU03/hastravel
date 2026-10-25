@@ -1,4 +1,4 @@
-export type PortfolioStatus = "full" | "demo" | "soon";
+export type PortfolioStatus = "full" | "live" | "soon";
 
 export type PortfolioItem = {
   no: number;
@@ -35,7 +35,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Dark Modern",
     description: "Antar-jemput bandara Ngurah Rai & Juanda: tarif per zona, shared atau private, nomor penerbangan.",
     features: ["Slider banner", "Tarif per zona", "Shared / private"],
-    status: "demo",
+    status: "live",
     palette: ["#0B1020", "#ffffff", "#C6F432", "#1c2540"],
     preview: "/portfolio/sayap-shuttle.jpg",
   },
@@ -47,7 +47,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Luxury",
     description: "Sewa Alphard & Hiace Premio: galeri armada, kalender ketersediaan, paket 12/24 jam.",
     features: ["Galeri armada", "Kalender unit", "Paket durasi"],
-    status: "demo",
+    status: "live",
     palette: ["#0d0d0d", "#f5efe3", "#c9a96e", "#2a2620"],
     preview: "/portfolio/kencana-executive.jpg",
   },
@@ -59,7 +59,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Bold & Ceria",
     description: "Bus untuk rombongan: kalkulator perkiraan harga, form penawaran, galeri bus & testimoni.",
     features: ["Kalkulator harga", "Form penawaran", "Galeri bus"],
-    status: "demo",
+    status: "live",
     palette: ["#ffcc00", "#1a1a1a", "#ff5a1f", "#fff4c2"],
     preview: "/portfolio/armada-ria.jpg",
   },
@@ -71,7 +71,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Natural & Hangat",
     description: "Paket Bromo, Ijen, Nusa Penida: itinerary per hari, kuota peserta, termasuk/tidak termasuk.",
     features: ["Itinerary", "Kuota peserta", "Galeri trip"],
-    status: "demo",
+    status: "live",
     palette: ["#f4ead8", "#3b2a20", "#c8623d", "#8fa382"],
     preview: "/portfolio/langkah-nusa.jpg",
   },
@@ -83,7 +83,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Islami Elegan",
     description: "Paket umroh per bulan keberangkatan, hotel & maskapai, pilihan kamar, simulasi DP.",
     features: ["Paket per bulan", "Pilih kamar", "Simulasi DP"],
-    status: "demo",
+    status: "live",
     palette: ["#0f3d2e", "#f6f1e4", "#d4af37", "#1d5c45"],
     preview: "/portfolio/raudhah-safar.jpg",
   },
@@ -95,7 +95,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Street / Urban",
     description: "Katalog motor harian & mingguan, pilih tanggal sewa, antar ke hotel.",
     features: ["Katalog motor", "Tanggal sewa", "Antar hotel"],
-    status: "demo",
+    status: "live",
     palette: ["#111111", "#ffffff", "#ff2e93", "#2b2b2b"],
     preview: "/portfolio/gaspol-bali.jpg",
   },
@@ -107,7 +107,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Ocean",
     description: "Fast boat ke Nusa Penida, Gili & Lombok: jadwal per pelabuhan, tiket PP, paket snorkeling.",
     features: ["Jadwal kapal", "Tiket PP", "Dewasa / anak"],
-    status: "demo",
+    status: "live",
     palette: ["#e6f7f8", "#063b4c", "#00a6b4", "#7fd6dd"],
     preview: "/portfolio/selat-express.jpg",
   },
@@ -136,7 +136,7 @@ export const PORTFOLIO: PortfolioItem[] = [
 ];
 
 export const STATUS_LABEL: Record<PortfolioStatus, string> = {
-  full: "Full demo + admin",
-  demo: "Live demo",
-  soon: "Segera hadir",
+  full: "Sistem lengkap",
+  live: "Live",
+  soon: "Dalam pengembangan",
 };

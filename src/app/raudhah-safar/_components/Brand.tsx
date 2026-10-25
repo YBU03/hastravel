@@ -92,7 +92,7 @@ export function RaudhahFooter() {
         <div className="text-sm md:text-right">
           © {new Date().getFullYear()} Raudhah Safar
           <br />
-          Demo dari{" "}
+          Website oleh{" "}
           <Link href="/" className="text-raudhah-gold underline">
             Yubu Travel Portfolio
           </Link>

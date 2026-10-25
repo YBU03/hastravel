@@ -1,183 +1,136 @@
-import { Instrument_Serif } from "next/font/google";
 import Link from "next/link";
-import { PORTFOLIO, STATUS_LABEL, type PortfolioItem } from "@/lib/portfolio";
+import { PORTFOLIO } from "@/lib/portfolio";
+import { Collection } from "./_home/Collection";
 
-const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-display" });
-
-export default function PortfolioGallery() {
+export default function Home() {
+  const total = PORTFOLIO.length;
   const live = PORTFOLIO.filter((p) => p.status !== "soon").length;
+  const full = PORTFOLIO.filter((p) => p.status === "full").length;
+  const progress = Math.round((live / total) * 100);
+
+  const stats = [
+    { label: "Total tema", value: total, note: "Kategori bisnis travel", icon: "grid" },
+    { label: "Live", value: live, note: "Dapat diakses publik", icon: "live" },
+    { label: "Dalam pengembangan", value: total - live, note: "Segera dirilis", icon: "build" },
+    { label: "Sistem lengkap", value: full, note: "Dengan panel admin", icon: "shield" },
+  ] as const;
+
   return (
-    <div className={`${serif.variable} min-h-screen bg-[#f6f4ef] text-[#141414]`}>
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6">
-        <YubuMark />
-        <a href="#tema" className="rounded-full bg-[#141414] px-4 py-2 text-sm font-semibold text-white hover:bg-[#ff6b4a]">
-          Lihat tema
-        </a>
+    <div className="min-h-screen bg-[#f5f6f8] text-slate-900">
+      {/* Navigasi */}
+      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
+          <Link href="/" className="flex items-center gap-3" aria-label="Yubu Travel Portfolio">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/yubu/logo.png" alt="" className="h-8 w-auto" />
+            <span className="leading-tight">
+              <span className="block text-[15px] font-extrabold tracking-tight">Yubu</span>
+              <span className="block text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500">Travel Portfolio</span>
+            </span>
+          </Link>
+          <nav className="hidden items-center gap-1 text-sm font-semibold text-slate-600 md:flex">
+            <a href="#ringkasan" className="rounded-lg px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
+              Ringkasan
+            </a>
+            <a href="#koleksi" className="rounded-lg px-3 py-2 hover:bg-slate-100 hover:text-slate-900">
+              Koleksi
+            </a>
+          </nav>
+          <a href="#koleksi" className="rounded-lg bg-[#ef0f0f] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#c90c0c]">
+            Lihat koleksi
+          </a>
+        </div>
       </header>
 
-      <section className="mx-auto max-w-6xl px-4 pb-14 pt-10 md:pt-16">
-        <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#ff6b4a]">Yubu Travel Portfolio</p>
-        <h1 className="mt-4 max-w-4xl font-display text-5xl leading-[0.95] tracking-tight md:text-7xl">
-          10 wajah website travel, <span className="italic text-[#ff6b4a]">satu</span> fondasi yang sama.
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-[#141414]/70">
-          Dari travel antar kota sampai fast boat dan umroh. Setiap tema punya gaya visual dan alur pemesanan sendiri, semuanya
-          terhubung ke WhatsApp dan siap dikembangkan dengan panel admin.
-        </p>
-        <dl className="mt-10 grid max-w-xl grid-cols-3 gap-6 border-t border-[#141414]/15 pt-6">
-          {[
-            [String(PORTFOLIO.length), "Tema"],
-            [String(live), "Sudah live"],
-            ["1", "Dengan panel admin"],
-          ].map(([n, label]) => (
-            <div key={label}>
-              <dt className="text-xs text-[#141414]/60">{label}</dt>
-              <dd className="font-display text-4xl">{n}</dd>
+      <main className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+        {/* Judul halaman */}
+        <section className="flex flex-col gap-4 border-b border-slate-200 py-10 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#ef0f0f]">Travel Web Collection</p>
+            <h1 className="mt-2 text-3xl font-extrabold tracking-tight md:text-4xl">Koleksi Website Travel</h1>
+            <p className="mt-2 max-w-2xl text-slate-600">
+              Desain website dan sistem pemesanan untuk bisnis travel: antar kota, shuttle bandara, sewa kendaraan, wisata, umroh, hingga fast
+              boat. Setiap tema terintegrasi dengan WhatsApp dan dioptimalkan untuk perangkat seluler.
+            </p>
+          </div>
+          <div className="text-sm text-slate-500">
+            Diperbarui <span className="font-semibold text-slate-700">{new Date().getFullYear()}</span>
+          </div>
+        </section>
+
+        {/* Ringkasan */}
+        <section id="ringkasan" className="scroll-mt-20 py-8">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.label} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <p className="text-sm font-medium text-slate-500">{s.label}</p>
+                    <p className="mt-1 text-3xl font-extrabold tracking-tight">{s.value}</p>
+                  </div>
+                  <StatIcon name={s.icon} />
+                </div>
+                <p className="mt-3 text-xs text-slate-500">{s.note}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="flex items-center justify-between text-sm">
+              <span className="font-semibold">Progres koleksi</span>
+              <span className="font-bold text-slate-700">{progress}%</span>
             </div>
-          ))}
-        </dl>
-      </section>
+            <div className="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+              <div className="h-full rounded-full bg-[#ef0f0f]" style={{ width: `${progress}%` }} />
+            </div>
+            <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-xs text-slate-500">
+              <Legend color="bg-[#ef0f0f]" text={`${live} tema live`} />
+              <Legend color="bg-slate-300" text={`${total - live} tema dalam pengembangan`} />
+            </div>
+          </div>
+        </section>
 
-      <section id="tema" className="mx-auto grid max-w-6xl scroll-mt-6 gap-6 px-4 pb-24 md:grid-cols-2">
-        {PORTFOLIO.map((item) => (
-          <ThemeCard key={item.slug} item={item} />
-        ))}
-      </section>
+        {/* Koleksi */}
+        <section id="koleksi" className="scroll-mt-20">
+          <Collection items={PORTFOLIO} />
+        </section>
+      </main>
 
-      <footer className="border-t border-[#141414]/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 text-sm text-[#141414]/60 md:flex-row md:items-center md:justify-between">
-          <YubuMark small />
-          <p>© {new Date().getFullYear()} Yubu Travel Portfolio · Semua nama brand di sini fiktif untuk keperluan demo.</p>
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-sm text-slate-500 sm:px-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/yubu/logo.png" alt="" className="h-6 w-auto" />
+            <span className="font-semibold text-slate-700">Yubu Travel Portfolio</span>
+          </div>
+          <p>© {new Date().getFullYear()} Yubu Travel Portfolio. Seluruh hak cipta dilindungi.</p>
         </div>
       </footer>
     </div>
   );
 }
 
-function YubuMark({ small = false }: { small?: boolean }) {
+function Legend({ color, text }: { color: string; text: string }) {
   return (
-    <Link href="/" className="flex items-center gap-2.5">
-      <svg viewBox="0 0 32 32" className={small ? "h-6 w-6" : "h-8 w-8"} aria-hidden>
-        <circle cx="16" cy="6" r="3.2" fill="#ff6b4a" />
-        <path d="M6 9l10 11v9M26 9L16 20" fill="none" stroke="#141414" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />
+    <span className="flex items-center gap-2">
+      <span className={`h-2 w-2 rounded-full ${color}`} />
+      {text}
+    </span>
+  );
+}
+
+function StatIcon({ name }: { name: "grid" | "live" | "build" | "shield" }) {
+  const paths = {
+    grid: <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" />,
+    live: <path d="M5 12l4 4L19 6" />,
+    build: <path d="M12 6v6l4 2M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z" />,
+    shield: <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" />,
+  };
+  const tone = name === "live" ? "bg-emerald-50 text-emerald-600" : name === "build" ? "bg-amber-50 text-amber-600" : name === "shield" ? "bg-red-50 text-[#ef0f0f]" : "bg-slate-100 text-slate-600";
+  return (
+    <span className={`flex h-10 w-10 items-center justify-center rounded-lg ${tone}`}>
+      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        {paths[name]}
       </svg>
-      <span className={`font-bold tracking-tight ${small ? "text-sm" : "text-base"}`}>
-        yubu <span className="font-normal text-[#141414]/60">travel portfolio</span>
-      </span>
-    </Link>
-  );
-}
-
-function ThemeCard({ item }: { item: PortfolioItem }) {
-  const live = item.status !== "soon";
-  const [bg, fg, accent, accent2] = item.palette;
-  const className = `group flex flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-[#141414]/10 transition ${
-    live ? "hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#141414]/10" : ""
-  }`;
-  const body = (
-    <>
-      {/* Preview */}
-      <div className="relative aspect-[16/10] overflow-hidden" style={{ background: bg }}>
-        {item.preview ? (
-          <>
-            <div className="absolute inset-x-0 top-0 z-10 flex h-6 items-center gap-1.5 bg-[#141414]/80 px-3 backdrop-blur">
-              <span className="h-2 w-2 rounded-full bg-white/30" />
-              <span className="h-2 w-2 rounded-full bg-white/30" />
-              <span className="h-2 w-2 rounded-full bg-white/30" />
-              <span className="ml-2 text-[10px] text-white/50">/{item.slug}</span>
-            </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={item.preview}
-              alt={`Tampilan ${item.name}`}
-              loading="lazy"
-              className="h-full w-full object-cover object-top pt-6 transition duration-700 group-hover:scale-[1.03]"
-            />
-          </>
-        ) : (
-          <MiniMock name={item.name} bg={bg} fg={fg} accent={accent} accent2={accent2} />
-        )}
-        <span
-          className={`absolute right-3 z-10 rounded-full ${item.preview ? "top-9" : "top-3"} px-2.5 py-1 text-[11px] font-bold ${
-            item.status === "full"
-              ? "bg-[#ff6b4a] text-white"
-              : item.status === "demo"
-                ? "bg-[#141414] text-white"
-                : "bg-white/90 text-[#141414]/70"
-          }`}
-        >
-          {STATUS_LABEL[item.status]}
-        </span>
-      </div>
-
-      {/* Info */}
-      <div className="flex flex-1 flex-col p-6">
-        <div className="flex items-center justify-between gap-3 text-xs text-[#141414]/60">
-          <span>
-            No. {String(item.no).padStart(2, "0")} · {item.business}
-          </span>
-          <span className="flex items-center gap-1.5">
-            {item.palette.map((c, i) => (
-              <span key={i} className="h-3 w-3 rounded-full ring-1 ring-[#141414]/10" style={{ background: c }} />
-            ))}
-          </span>
-        </div>
-        <h2 className="mt-3 font-display text-3xl leading-none">{item.name}</h2>
-        <p className="mt-1 text-sm font-semibold text-[#ff6b4a]">Tema {item.style}</p>
-        <p className="mt-3 text-sm text-[#141414]/70">{item.description}</p>
-        <ul className="mt-4 flex flex-wrap gap-1.5">
-          {item.features.map((f) => (
-            <li key={f} className="rounded-full bg-[#f6f4ef] px-2.5 py-1 text-xs text-[#141414]/70">
-              {f}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-auto pt-6">
-          {live ? (
-            <span className="inline-flex items-center gap-2 text-sm font-bold group-hover:text-[#ff6b4a]">
-              Lihat demo <span className="transition group-hover:translate-x-1">→</span>
-            </span>
-          ) : (
-            <span className="text-sm font-semibold text-[#141414]/40">Dalam pengerjaan</span>
-          )}
-        </div>
-      </div>
-    </>
-  );
-  return live ? (
-    <Link href={`/${item.slug}`} className={className}>
-      {body}
-    </Link>
-  ) : (
-    <div className={className}>{body}</div>
-  );
-}
-
-/** Mockup mini dari palet tema, untuk tema yang belum dibuat. */
-function MiniMock({ name, bg, fg, accent, accent2 }: { name: string; bg: string; fg: string; accent: string; accent2: string }) {
-  return (
-    <div className="absolute inset-0 flex flex-col p-5" style={{ color: fg }}>
-      <div className="flex items-center justify-between">
-        <span className="h-3 w-20 rounded-full" style={{ background: fg, opacity: 0.85 }} />
-        <span className="flex gap-2">
-          <span className="h-2 w-8 rounded-full" style={{ background: fg, opacity: 0.35 }} />
-          <span className="h-2 w-8 rounded-full" style={{ background: fg, opacity: 0.35 }} />
-          <span className="h-5 w-14 rounded-full" style={{ background: accent }} />
-        </span>
-      </div>
-      <div className="mt-auto grid grid-cols-[1.4fr_1fr] items-end gap-4">
-        <div>
-          <div className="font-display text-3xl leading-none md:text-4xl">{name}</div>
-          <div className="mt-3 h-2 w-3/4 rounded-full" style={{ background: fg, opacity: 0.3 }} />
-          <div className="mt-1.5 h-2 w-1/2 rounded-full" style={{ background: fg, opacity: 0.3 }} />
-          <div className="mt-4 h-7 w-24 rounded-lg" style={{ background: accent }} />
-        </div>
-        <div className="grid h-full grid-cols-2 gap-2">
-          <div className="rounded-xl" style={{ background: accent2 }} />
-          <div className="rounded-xl" style={{ background: accent, opacity: 0.85 }} />
-          <div className="col-span-2 h-12 rounded-xl" style={{ background: accent2, opacity: 0.7 }} />
-        </div>
-      </div>
-    </div>
+    </span>
   );
 }
