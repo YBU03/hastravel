@@ -39,10 +39,11 @@ async function connect(): Promise<Db> {
     };
   }
 
-  // Tanpa DATABASE_URL: Postgres tertanam (PGlite), data disimpan di folder .data/
+  // Tanpa DATABASE_URL: Postgres tertanam (PGlite), data disimpan di folder .data/.
+  // Di Vercel hanya /tmp yang bisa ditulis, jadi data demo hilang saat server restart.
   const { PGlite } = await import("@electric-sql/pglite");
   const { mkdirSync } = await import("node:fs");
-  const dir = process.env.PGLITE_DIR ?? ".data/pglite";
+  const dir = process.env.PGLITE_DIR ?? (process.env.VERCEL ? "/tmp/pglite" : ".data/pglite");
   mkdirSync(dir, { recursive: true });
   const pg = new PGlite(dir);
   await pg.exec(SCHEMA_SQL);
