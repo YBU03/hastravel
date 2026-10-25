@@ -27,6 +27,8 @@ export default {
         ria: { yellow: "#ffcc00", ink: "#1a1a1a", orange: "#ff5a1f", cream: "#fff4c2", sky: "#7fd3ff" },
         // Tema Langkah Nusa (Natural & Hangat)
         nusa: { cream: "#f4ead8", sand: "#eadcc2", brown: "#3b2a20", terra: "#c8623d", sage: "#8fa382", moss: "#5d6e52" },
+        // Tema Raudhah Safar (Islami Elegan)
+        raudhah: { deep: "#0a2a20", emerald: "#0f3d2e", leaf: "#1d5c45", gold: "#d4af37", "gold-soft": "#e9d28a", ivory: "#f6f1e4" },
         brand: {
           50: "#eef5ff",
           100: "#d9e8ff",

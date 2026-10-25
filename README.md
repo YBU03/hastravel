@@ -10,7 +10,8 @@ Kumpulan 10 tema website travel dalam satu repo. Daftar tema ada di `src/lib/por
 | `/kencana-executive` | 3. Kencana Executive: sewa mobil premium, tema Luxury |
 | `/armada-ria` | 4. Armada Ria: sewa bus rombongan + kalkulator penawaran, tema Bold & Ceria |
 | `/langkah-nusa` | 5. Langkah Nusa: open trip dengan itinerary & kuota, tema Natural |
-| … | 6–10 menyusul (status "Segera hadir" di galeri) |
+| `/raudhah-safar` | 6. Raudhah Safar: umroh & haji, jadwal per bulan, pilih kamar, simulasi DP & cicilan, tema Islami Elegan |
+| … | 7–10 menyusul (status "Segera hadir" di galeri) |
 
 Tema 2–5 tidak memakai database; data & nomor WA demo ada di `data.ts` masing-masing. Foto yang belum ada (`null` di `data.ts`) otomatis diganti ilustrasi.
 

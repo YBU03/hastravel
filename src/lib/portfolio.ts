@@ -83,8 +83,9 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Islami Elegan",
     description: "Paket umroh per bulan keberangkatan, hotel & maskapai, pilihan kamar, simulasi DP.",
     features: ["Paket per bulan", "Pilih kamar", "Simulasi DP"],
-    status: "soon",
+    status: "demo",
     palette: ["#0f3d2e", "#f6f1e4", "#d4af37", "#1d5c45"],
+    preview: "/portfolio/raudhah-safar.jpg",
   },
   {
     no: 7,
