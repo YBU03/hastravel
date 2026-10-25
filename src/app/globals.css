@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f4f6fa] text-slate-800 antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-stripes {
+    background-image: repeating-linear-gradient(135deg, rgb(0 0 0 / 0.06) 0 4px, transparent 4px 8px);
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}
