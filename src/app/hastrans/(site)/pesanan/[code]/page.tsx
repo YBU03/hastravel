@@ -149,7 +149,7 @@ export default async function BookingDetailPage({ params, searchParams }: Props)
         </div>
         <p className="mt-4 text-center text-sm text-slate-500">
           Simpan kode booking ini.{" "}
-          <Link href="/" className="font-semibold text-brand-600">
+          <Link href="/hastrans" className="font-semibold text-brand-600">
             Kembali ke beranda
           </Link>
         </p>

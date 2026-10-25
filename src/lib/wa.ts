@@ -37,7 +37,7 @@ export function bookingMessage(b: Booking, siteUrl: string): string {
     `Harga: ${rupiah(b.price_per_seat)} x ${b.seats.length} kursi`,
     `*Total: ${rupiah(b.total)}*`,
     "",
-    `Detail: ${siteUrl}/pesanan/${b.code}`,
+    `Detail: ${siteUrl}/hastrans/pesanan/${b.code}`,
   ].join("\n");
 }
 
@@ -47,7 +47,7 @@ export function customerMessage(b: Booking, siteUrl: string): string {
     b.status === "paid" || b.status === "done"
       ? `Halo ${b.customer_name}, pembayaran pesanan *${b.code}* sudah kami terima. Terima kasih! ✅`
       : `Halo ${b.customer_name}, kami dari HasTrans terkait pesanan *${b.code}*.`;
-  return [head, "", ...tripLines(b), `Total: ${rupiah(b.total)}`, "", `Detail: ${siteUrl}/pesanan/${b.code}`].join(
+  return [head, "", ...tripLines(b), `Total: ${rupiah(b.total)}`, "", `Detail: ${siteUrl}/hastrans/pesanan/${b.code}`].join(
     "\n",
   );
 }

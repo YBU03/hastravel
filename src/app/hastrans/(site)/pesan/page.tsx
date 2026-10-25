@@ -22,7 +22,7 @@ export default async function BookingPage({ searchParams }: { searchParams: SP }
   ]);
   if (!trip || !trip.schedule.active || !trip.route.active) notFound();
   const info = tripInfo(trip);
-  const back = `/cari?from=${trip.route.origin}&to=${trip.route.destination}&date=${trip.date}&pax=${sp.pax ?? 1}`;
+  const back = `/hastrans/cari?from=${trip.route.origin}&to=${trip.route.destination}&date=${trip.date}&pax=${sp.pax ?? 1}`;
 
   return (
     <>

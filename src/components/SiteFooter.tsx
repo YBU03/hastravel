@@ -53,17 +53,17 @@ export function SiteFooter({ settings }: { settings: Settings }) {
           <h3 className="font-semibold text-slate-900">Layanan</h3>
           <ul className="mt-4 space-y-2 text-sm text-slate-600">
             <li>
-              <Link href="/" className="hover:text-brand-600">
+              <Link href="/hastrans" className="hover:text-brand-600">
                 Pesan Tiket
               </Link>
             </li>
             <li>
-              <Link href="/cek-pesanan" className="hover:text-brand-600">
+              <Link href="/hastrans/cek-pesanan" className="hover:text-brand-600">
                 Cek Pesanan
               </Link>
             </li>
             <li>
-              <Link href="/#cara-pesan" className="hover:text-brand-600">
+              <Link href="/hastrans#cara-pesan" className="hover:text-brand-600">
                 Cara Pesan
               </Link>
             </li>
@@ -71,7 +71,10 @@ export function SiteFooter({ settings }: { settings: Settings }) {
         </div>
       </div>
       <div className="border-t border-slate-100 py-5 text-center text-xs text-slate-400">
-        © {new Date().getFullYear()} HasTrans. Travel Antar Kota.
+        © {new Date().getFullYear()} HasTrans. Travel Antar Kota. · Demo dari{" "}
+        <Link href="/" className="text-brand-600 hover:underline">
+          Yubu Travel Portfolio
+        </Link>
       </div>
     </footer>
   );

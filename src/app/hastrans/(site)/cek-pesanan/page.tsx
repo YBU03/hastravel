@@ -16,7 +16,7 @@ export default async function CheckBookingPage({ searchParams }: { searchParams:
   let error = "";
   if (sp.code) {
     const b = await getBookingByCode(sp.code);
-    if (b && sp.phone && normalizePhone(b.phone) === normalizePhone(sp.phone)) redirect(`/pesanan/${b.code}`);
+    if (b && sp.phone && normalizePhone(b.phone) === normalizePhone(sp.phone)) redirect(`/hastrans/pesanan/${b.code}`);
     error = "Pesanan tidak ditemukan. Periksa kembali kode booking dan nomor HP yang dipakai saat memesan.";
   }
 

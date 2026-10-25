@@ -57,7 +57,7 @@ export default async function HomePage() {
       <div className="mx-auto max-w-6xl px-4">
         {/* Kartu melayang */}
         <div className="relative z-10 -mt-10 grid grid-cols-2 divide-x divide-slate-100 rounded-2xl bg-white p-4 shadow-lg shadow-slate-900/5">
-          <Link href="/cek-pesanan" className="flex items-center gap-3 pr-3">
+          <Link href="/hastrans/cek-pesanan" className="flex items-center gap-3 pr-3">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
               <IconTicket />
             </span>
@@ -90,7 +90,7 @@ export default async function HomePage() {
             {routes.map((r) => (
               <Link
                 key={r.id}
-                href={`/cari?from=${r.origin}&to=${r.destination}&date=${today}&pax=1`}
+                href={`/hastrans/cari?from=${r.origin}&to=${r.destination}&date=${today}&pax=1`}
                 className="group rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md hover:ring-brand-200"
               >
                 <div className="flex items-center gap-2 text-base font-bold text-slate-900">

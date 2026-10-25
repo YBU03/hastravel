@@ -56,7 +56,7 @@ export default async function AdminBookingsPage({ searchParams }: { searchParams
         </select>
         {filter.scheduleId && <input type="hidden" name="schedule" value={filter.scheduleId} />}
         <button className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white">Filter</button>
-        <Link href="/admin/pesanan" className="rounded-lg px-3 py-2 text-sm text-slate-500 hover:text-slate-800">
+        <Link href="/hastrans/admin/pesanan" className="rounded-lg px-3 py-2 text-sm text-slate-500 hover:text-slate-800">
           Reset
         </Link>
       </form>

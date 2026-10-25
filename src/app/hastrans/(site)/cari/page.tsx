@@ -21,7 +21,7 @@ export default async function SearchPage({ searchParams }: { searchParams: SP })
   const pax = Math.min(MAX_SEATS_PER_BOOKING, Math.max(1, Number(sp.pax) || 1));
   const trips = await searchTrips(from, to, date);
 
-  const qs = (d: string) => `/cari?from=${from}&to=${to}&date=${d}&pax=${pax}`;
+  const qs = (d: string) => `/hastrans/cari?from=${from}&to=${to}&date=${d}&pax=${pax}`;
   const start = addDays(date, -2) < today ? today : addDays(date, -2);
   const days = Array.from({ length: 5 }, (_, i) => addDays(start, i));
 
@@ -145,7 +145,7 @@ export default async function SearchPage({ searchParams }: { searchParams: SP })
                   </div>
                   {available ? (
                     <Link
-                      href={`/pesan?schedule=${t.schedule.id}&date=${date}&pax=${pax}`}
+                      href={`/hastrans/pesan?schedule=${t.schedule.id}&date=${date}&pax=${pax}`}
                       className="rounded-xl bg-brand-600 px-5 py-2.5 font-semibold text-white shadow-md shadow-brand-600/20 hover:bg-brand-700"
                     >
                       Pilih Kursi

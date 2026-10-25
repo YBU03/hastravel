@@ -4,15 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const LINKS = [
-  { href: "/admin", label: "Dashboard" },
-  { href: "/admin/pesanan", label: "Pesanan" },
-  { href: "/admin/pesanan/baru", label: "+ Pesanan Manual" },
-  { href: "/admin/pengaturan", label: "Pengaturan" },
+  { href: "/hastrans/admin", label: "Dashboard" },
+  { href: "/hastrans/admin/pesanan", label: "Pesanan" },
+  { href: "/hastrans/admin/pesanan/baru", label: "+ Pesanan Manual" },
+  { href: "/hastrans/admin/pengaturan", label: "Pengaturan" },
 ];
 
 export function AdminNav() {
   const path = usePathname();
-  // Pilih link dengan awalan terpanjang yang cocok, supaya "/admin/pesanan/baru" tidak ikut menyalakan "Pesanan".
+  // Pilih link dengan awalan terpanjang yang cocok, supaya "/hastrans/admin/pesanan/baru" tidak ikut menyalakan "Pesanan".
   const current = LINKS.filter((l) => path === l.href || path.startsWith(l.href + "/"))
     .sort((a, b) => b.href.length - a.href.length)[0]?.href;
   const active = (href: string) => href === current;

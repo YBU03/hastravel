@@ -32,12 +32,12 @@ export async function loginAction(_: string | null, fd: FormData): Promise<strin
     path: "/",
     maxAge,
   });
-  redirect("/admin");
+  redirect("/hastrans/admin");
 }
 
 export async function logoutAction() {
   (await cookies()).delete(ADMIN_COOKIE);
-  redirect("/admin/login");
+  redirect("/hastrans/admin/login");
 }
 
 export async function setStatusAction(fd: FormData) {
@@ -47,7 +47,7 @@ export async function setStatusAction(fd: FormData) {
   } catch (e) {
     if (!(e instanceof BookingError)) throw e;
   }
-  revalidatePath("/admin", "layout");
+  revalidatePath("/hastrans/admin", "layout");
 }
 
 export async function createManualBookingAction(payload: BookingPayload): Promise<BookingResult> {
@@ -57,7 +57,7 @@ export async function createManualBookingAction(payload: BookingPayload): Promis
       source: "admin",
       status: payload.status === "pending" ? "pending" : "paid",
     });
-    return { ok: true, redirect: `/admin/pesanan?q=${b.code}` };
+    return { ok: true, redirect: `/hastrans/admin/pesanan?q=${b.code}` };
   } catch (e) {
     if (e instanceof BookingError) return { ok: false, error: e.message, taken: e.takenSeats };
     console.error(e);
@@ -77,8 +77,8 @@ export async function saveSettingsAction(fd: FormData) {
     address: String(fd.get("address") ?? "").trim(),
     email: String(fd.get("email") ?? "").trim(),
   });
-  revalidatePath("/", "layout");
-  redirect("/admin/pengaturan?saved=1");
+  revalidatePath("/hastrans", "layout");
+  redirect("/hastrans/admin/pengaturan?saved=1");
 }
 
 export async function saveRouteAction(fd: FormData) {
@@ -91,7 +91,7 @@ export async function saveRouteAction(fd: FormData) {
     duration_min: Math.round(duration),
     active: !!fd.get("active"),
   });
-  revalidatePath("/", "layout");
+  revalidatePath("/hastrans", "layout");
 }
 
 export async function addScheduleAction(fd: FormData) {
@@ -99,11 +99,11 @@ export async function addScheduleAction(fd: FormData) {
   const time = String(fd.get("depart_time") ?? "");
   if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(time)) return;
   await addSchedule(Number(fd.get("route_id")), time);
-  revalidatePath("/", "layout");
+  revalidatePath("/hastrans", "layout");
 }
 
 export async function toggleScheduleAction(fd: FormData) {
   await requireAdmin();
   await setScheduleActive(Number(fd.get("id")), fd.get("active") === "true");
-  revalidatePath("/", "layout");
+  revalidatePath("/hastrans", "layout");
 }

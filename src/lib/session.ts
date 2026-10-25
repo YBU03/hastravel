@@ -7,5 +7,5 @@ export async function isAdmin(): Promise<boolean> {
 }
 
 export async function requireAdmin() {
-  if (!(await isAdmin())) redirect("/admin/login");
+  if (!(await isAdmin())) redirect("/hastrans/admin/login");
 }

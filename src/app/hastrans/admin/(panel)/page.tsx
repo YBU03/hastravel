@@ -26,12 +26,12 @@ export default async function AdminDashboard({ searchParams }: { searchParams: P
           <p className="text-sm text-slate-500">{formatDate(date)}</p>
         </div>
         <form className="flex items-center gap-2">
-          <Link href={`/admin?date=${addDays(date, -1)}`} className="rounded-lg bg-white px-3 py-2 text-sm shadow-sm ring-1 ring-slate-200">
+          <Link href={`/hastrans/admin?date=${addDays(date, -1)}`} className="rounded-lg bg-white px-3 py-2 text-sm shadow-sm ring-1 ring-slate-200">
             ←
           </Link>
           <input type="date" name="date" defaultValue={date} className="rounded-lg border border-slate-200 px-3 py-2 text-sm" />
           <button className="rounded-lg bg-brand-600 px-3 py-2 text-sm font-semibold text-white">Lihat</button>
-          <Link href={`/admin?date=${addDays(date, 1)}`} className="rounded-lg bg-white px-3 py-2 text-sm shadow-sm ring-1 ring-slate-200">
+          <Link href={`/hastrans/admin?date=${addDays(date, 1)}`} className="rounded-lg bg-white px-3 py-2 text-sm shadow-sm ring-1 ring-slate-200">
             →
           </Link>
         </form>
@@ -79,13 +79,13 @@ export default async function AdminDashboard({ searchParams }: { searchParams: P
                 <span>{rupiah(t.revenue)}</span>
               </div>
               <div className="mt-4 flex flex-wrap gap-2 text-sm">
-                <Link href={`/admin/pesanan?${q}`} className="rounded-lg bg-brand-50 px-3 py-1.5 font-medium text-brand-700 hover:bg-brand-100">
+                <Link href={`/hastrans/admin/pesanan?${q}`} className="rounded-lg bg-brand-50 px-3 py-1.5 font-medium text-brand-700 hover:bg-brand-100">
                   Pesanan ({t.bookings})
                 </Link>
-                <Link href={`/admin/manifest?${q}`} className="rounded-lg bg-brand-50 px-3 py-1.5 font-medium text-brand-700 hover:bg-brand-100">
+                <Link href={`/hastrans/admin/manifest?${q}`} className="rounded-lg bg-brand-50 px-3 py-1.5 font-medium text-brand-700 hover:bg-brand-100">
                   Manifest
                 </Link>
-                <Link href={`/admin/pesanan/baru?${q}`} className="rounded-lg bg-brand-50 px-3 py-1.5 font-medium text-brand-700 hover:bg-brand-100">
+                <Link href={`/hastrans/admin/pesanan/baru?${q}`} className="rounded-lg bg-brand-50 px-3 py-1.5 font-medium text-brand-700 hover:bg-brand-100">
                   + Pesanan manual
                 </Link>
               </div>

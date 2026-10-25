@@ -30,7 +30,7 @@ export function SearchForm({ routes, cityNames, minDate, defaults }: Props) {
   const canSwap = routes.some((r) => r.origin === to && r.destination === from);
 
   return (
-    <form action="/cari" method="get" className="grid gap-3">
+    <form action="/hastrans/cari" method="get" className="grid gap-3">
       <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
         <label className={field}>
           <IconBus className="shrink-0 opacity-90" />
