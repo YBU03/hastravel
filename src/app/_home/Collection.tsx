@@ -81,7 +81,7 @@ export function Collection({ items }: { items: PortfolioItem[] }) {
       {shown.length === 0 && <p className="py-16 text-center text-slate-500">Tidak ada tema yang cocok dengan pencarian.</p>}
 
       {view === "grid" ? (
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
           {shown.map((p) => (
             <Card key={p.slug} item={p} />
           ))}
