@@ -43,7 +43,7 @@ export default async function BookingDetailPage({ params, searchParams }: Props)
         </div>
       </BlueBand>
 
-      <div className="mx-auto -mt-16 max-w-2xl px-4">
+      <div className="relative z-10 mx-auto -mt-16 max-w-2xl px-4">
         <div className="overflow-hidden rounded-2xl bg-white shadow-lg shadow-slate-900/5">
           <div className="flex items-center justify-between gap-3 border-b border-dashed border-slate-200 p-5">
             <div>
