@@ -29,6 +29,8 @@ export default {
         nusa: { cream: "#f4ead8", sand: "#eadcc2", brown: "#3b2a20", terra: "#c8623d", sage: "#8fa382", moss: "#5d6e52" },
         // Tema Raudhah Safar (Islami Elegan)
         raudhah: { deep: "#0a2a20", emerald: "#0f3d2e", leaf: "#1d5c45", gold: "#d4af37", "gold-soft": "#e9d28a", ivory: "#f6f1e4" },
+        // Tema Gaspol Bali (Street / Urban)
+        gaspol: { ink: "#0d0d0d", coal: "#1a1a1a", line: "#2b2b2b", pink: "#ff2e93", "pink-dark": "#d81b78", acid: "#d7ff3a" },
         brand: {
           50: "#eef5ff",
           100: "#d9e8ff",

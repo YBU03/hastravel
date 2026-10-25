@@ -95,8 +95,9 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Street / Urban",
     description: "Katalog motor harian & mingguan, pilih tanggal sewa, antar ke hotel.",
     features: ["Katalog motor", "Tanggal sewa", "Antar hotel"],
-    status: "soon",
+    status: "demo",
     palette: ["#111111", "#ffffff", "#ff2e93", "#2b2b2b"],
+    preview: "/portfolio/gaspol-bali.jpg",
   },
   {
     no: 8,
