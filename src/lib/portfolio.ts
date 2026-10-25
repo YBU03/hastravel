@@ -119,8 +119,9 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Retro Poster",
     description: "Cari tiket pesawat & hotel, promo destinasi, permintaan dipesankan via WhatsApp.",
     features: ["Cari tiket", "Promo destinasi", "Cap retro"],
-    status: "soon",
+    status: "live",
     palette: ["#f3e7cf", "#2d1e12", "#d6452b", "#e2a72e"],
+    preview: "/portfolio/jendela-trip.jpg",
   },
   {
     no: 10,
@@ -130,8 +131,9 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Editorial",
     description: "Private driver per jam / per hari untuk turis, contoh rute, profil sopir, bahasa Inggris.",
     features: ["Sewa per jam", "Contoh rute", "English"],
-    status: "soon",
+    status: "live",
     palette: ["#fafaf7", "#111111", "#111111", "#d9d6cc"],
+    preview: "/portfolio/bali-driver.jpg",
   },
 ];
 

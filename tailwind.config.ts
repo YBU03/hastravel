@@ -33,6 +33,10 @@ export default {
         gaspol: { ink: "#0d0d0d", coal: "#1a1a1a", line: "#2b2b2b", pink: "#ff2e93", "pink-dark": "#d81b78", acid: "#d7ff3a" },
         // Tema Selat Express (Ocean)
         selat: { foam: "#e6f7f8", deep: "#063b4c", sea: "#0b6e80", teal: "#00a6b4", aqua: "#7fd6dd", sand: "#f6e7c8", coral: "#ff7a59" },
+        // Tema Jendela Trip (Retro Poster)
+        jendela: { paper: "#f3e7cf", cream: "#faf3e3", ink: "#2d1e12", red: "#d6452b", mustard: "#e2a72e", teal: "#2f7f7a" },
+        // Tema Bali Driver Co. (Editorial)
+        editorial: { paper: "#fafaf7", ink: "#111111", stone: "#d9d6cc", mute: "#6b6a64" },
         brand: {
           50: "#eef5ff",
           100: "#d9e8ff",
