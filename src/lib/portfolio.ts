@@ -107,8 +107,9 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Ocean",
     description: "Fast boat ke Nusa Penida, Gili & Lombok: jadwal per pelabuhan, tiket PP, paket snorkeling.",
     features: ["Jadwal kapal", "Tiket PP", "Dewasa / anak"],
-    status: "soon",
+    status: "demo",
     palette: ["#e6f7f8", "#063b4c", "#00a6b4", "#7fd6dd"],
+    preview: "/portfolio/selat-express.jpg",
   },
   {
     no: 9,

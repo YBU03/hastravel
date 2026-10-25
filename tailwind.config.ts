@@ -31,6 +31,8 @@ export default {
         raudhah: { deep: "#0a2a20", emerald: "#0f3d2e", leaf: "#1d5c45", gold: "#d4af37", "gold-soft": "#e9d28a", ivory: "#f6f1e4" },
         // Tema Gaspol Bali (Street / Urban)
         gaspol: { ink: "#0d0d0d", coal: "#1a1a1a", line: "#2b2b2b", pink: "#ff2e93", "pink-dark": "#d81b78", acid: "#d7ff3a" },
+        // Tema Selat Express (Ocean)
+        selat: { foam: "#e6f7f8", deep: "#063b4c", sea: "#0b6e80", teal: "#00a6b4", aqua: "#7fd6dd", sand: "#f6e7c8", coral: "#ff7a59" },
         brand: {
           50: "#eef5ff",
           100: "#d9e8ff",
