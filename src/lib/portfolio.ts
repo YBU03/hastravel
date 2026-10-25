@@ -47,8 +47,9 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Luxury",
     description: "Sewa Alphard & Hiace Premio: galeri armada, kalender ketersediaan, paket 12/24 jam.",
     features: ["Galeri armada", "Kalender unit", "Paket durasi"],
-    status: "soon",
+    status: "demo",
     palette: ["#0d0d0d", "#f5efe3", "#c9a96e", "#2a2620"],
+    preview: "/portfolio/kencana-executive.jpg",
   },
   {
     no: 4,

@@ -14,6 +14,15 @@ export default {
           lime: "#C6F432",
           "lime-dark": "#a9d417",
         },
+        // Tema Kencana Executive (Luxury)
+        kencana: {
+          black: "#0b0b0b",
+          coal: "#141312",
+          line: "#2b2721",
+          gold: "#c9a96e",
+          "gold-light": "#e3cc9c",
+          ivory: "#f5efe3",
+        },
         brand: {
           50: "#eef5ff",
           100: "#d9e8ff",
