@@ -19,9 +19,8 @@ export function Sticker({ children, className = "" }: { children: React.ReactNod
 export function GaspolLogo() {
   return (
     <Link href="/gaspol-bali" className="group flex items-center gap-2" aria-label="Gaspol Bali - Beranda">
-      <span className="flex h-10 w-10 -rotate-6 items-center justify-center rounded-full border-2 border-white bg-gaspol-pink font-display text-xl text-black transition group-hover:rotate-6">
-        ⚡
-      </span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/gaspol/logo.png" alt="" className="h-10 w-auto -rotate-6 transition group-hover:rotate-0" />
       <span className="font-display text-3xl uppercase italic leading-none tracking-wide">
         Gaspol<span className="text-gaspol-pink">Bali</span>
       </span>
@@ -47,9 +46,9 @@ export function GaspolNav() {
         </nav>
         <Link
           href="/gaspol-bali/sewa"
-          className="rounded-full bg-gaspol-pink px-5 py-2 font-display text-lg uppercase tracking-wide text-black shadow-[0_0_24px_rgba(255,46,147,0.5)] hover:bg-white"
+          className="whitespace-nowrap rounded-full bg-gaspol-pink px-5 py-2 font-display text-lg uppercase tracking-wide text-black shadow-[0_0_24px_rgba(255,46,147,0.5)] hover:bg-white"
         >
-          Sewa sekarang
+          Sewa<span className="hidden sm:inline"> sekarang</span>
         </Link>
       </div>
     </header>

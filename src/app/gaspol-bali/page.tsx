@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { rupiah } from "@/lib/format";
 import { GaspolFooter, GaspolNav, grain, Marquee, Sticker } from "./_components/Brand";
+import { HeroSlider } from "./_components/HeroSlider";
 import { ScooterArt } from "./_components/ScooterArt";
-import { AREAS, BIKES, FAQ, FEED_IMAGES, HERO_IMAGES } from "./data";
+import { AREAS, BIKES, FAQ, FEED_IMAGES } from "./data";
 
 const tilt = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2"];
 
@@ -12,17 +13,9 @@ export default function GaspolHome() {
       <GaspolNav />
 
       {/* Hero */}
-      <section className="relative overflow-hidden" style={grain}>
-        {HERO_IMAGES[0] && (
-          <>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={HERO_IMAGES[0]} alt="" className="absolute inset-0 h-full w-full object-cover object-[70%_center]" />
-            <div className="absolute inset-0 bg-gradient-to-r from-gaspol-ink via-gaspol-ink/80 to-transparent" />
-          </>
-        )}
-        <div className="pointer-events-none absolute -right-40 top-10 h-[30rem] w-[30rem] rounded-full bg-gaspol-pink/20 blur-3xl" />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:py-24 lg:grid-cols-[1.1fr_1fr]">
-          <div>
+      <HeroSlider>
+        <div className="relative mx-auto flex min-h-[86svh] max-w-6xl flex-col justify-center px-4 py-20 md:min-h-[680px]" style={grain}>
+          <div className="max-w-xl">
             <Sticker className="-rotate-3">Sewa motor Bali</Sticker>
             <h1 className="mt-6 font-display text-7xl uppercase leading-[0.9] md:text-[7.5rem]">
               Gas
@@ -35,7 +28,7 @@ export default function GaspolHome() {
                 <span className="absolute -bottom-1 left-0 h-3 w-full -skew-x-12 bg-gaspol-acid/80 mix-blend-multiply" />
               </span>
             </h1>
-            <p className="mt-6 max-w-md text-lg text-white/75">
+            <p className="mt-6 max-w-md text-lg text-white/85">
               Scoopy sampai KLX. Diantar ke villa, harga harian–bulanan, helm & jas hujan gratis. Tinggal gas.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -45,18 +38,17 @@ export default function GaspolHome() {
               >
                 Sewa sekarang
               </Link>
-              <a href="#motor" className="rounded-full border-2 border-white px-8 py-4 font-display text-2xl uppercase tracking-wide hover:border-gaspol-pink hover:text-gaspol-pink">
+              <a href="#motor" className="rounded-full border-2 border-white bg-black/30 px-8 py-4 font-display text-2xl uppercase tracking-wide backdrop-blur hover:border-gaspol-pink hover:text-gaspol-pink">
                 Lihat motor
               </a>
             </div>
-          </div>
-          <div className="relative">
-            <ScooterArt className="w-full" />
-            <Sticker className="absolute -top-2 left-4 rotate-6 bg-gaspol-acid">Mulai 70rb/hari</Sticker>
-            <Sticker className="absolute bottom-6 right-0 -rotate-6 bg-white">Antar gratis Canggu</Sticker>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Sticker className="rotate-2 bg-gaspol-acid">Mulai 70rb/hari</Sticker>
+              <Sticker className="-rotate-2 bg-white">Antar gratis Canggu</Sticker>
+            </div>
           </div>
         </div>
-      </section>
+      </HeroSlider>
 
       <Marquee items={["Antar ke villa", "Helm gratis", "Tarif mingguan hemat", "Surf rack ready", "WA 24 jam"]} />
 

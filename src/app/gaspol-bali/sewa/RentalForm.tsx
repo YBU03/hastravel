@@ -94,7 +94,12 @@ export function RentalForm({ initialBike }: { initialBike?: string }) {
                   b.id === bikeId ? "border-gaspol-pink bg-gaspol-pink/10 shadow-[0_0_20px_rgba(255,46,147,0.3)]" : "border-gaspol-line hover:border-white"
                 }`}
               >
-                <ScooterArt kind={b.id === "klx" ? "trail" : "scooter"} className="w-full" />
+                {b.image ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={b.image} alt={b.name} className="aspect-[4/3] w-full object-contain" />
+                ) : (
+                  <ScooterArt kind={b.id === "klx" ? "trail" : "scooter"} className="w-full" />
+                )}
                 <div className="mt-2 font-display text-2xl uppercase">{b.name}</div>
                 <div className="text-xs text-white/60">{rupiah(b.daily)}/hari</div>
               </button>

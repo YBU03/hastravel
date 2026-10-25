@@ -3,7 +3,11 @@
 export const GASPOL_WA = "6281234567890";
 
 /** Foto dari pengguna; selama kosong/null halaman memakai ilustrasi neon. */
-export const HERO_IMAGES: string[] = [];
+export const HERO_SLIDES: { image: string; caption: string }[] = [
+  { image: "/gaspol/slide-1.jpg", caption: "Sunset ride di Canggu" },
+  { image: "/gaspol/slide-2.jpg", caption: "Surf rack siap ke Uluwatu" },
+  { image: "/gaspol/slide-3.jpg", caption: "Malam di Seminyak" },
+];
 export const FEED_IMAGES: (string | null)[] = [null, null, null, null];
 
 export type Bike = {
@@ -20,10 +24,10 @@ export type Bike = {
 };
 
 export const BIKES: Bike[] = [
-  { id: "scoopy", name: "Scoopy", type: "Matic retro", cc: 110, daily: 70000, weekly: 420000, monthly: 1500000, tag: "Paling murah", image: null, perks: ["Ringan & lincah", "Irit bensin", "Bagasi helm"] },
-  { id: "nmax", name: "NMax", type: "Maxi scooter", cc: 155, daily: 120000, weekly: 750000, monthly: 2600000, tag: "Favorit turis", image: null, perks: ["Jok lebar berdua", "ABS", "Nyaman jarak jauh"] },
-  { id: "pcx", name: "PCX", type: "Maxi premium", cc: 160, daily: 130000, weekly: 800000, monthly: 2800000, tag: "Paling nyaman", image: null, perks: ["Keyless", "Suspensi empuk", "Bagasi 30 L"] },
-  { id: "klx", name: "KLX", type: "Trail / dual-sport", cc: 150, daily: 200000, weekly: 1200000, monthly: 4200000, tag: "Buat petualang", image: null, perks: ["Jalan rusak? santai", "Ke air terjun & bukit", "Ground clearance tinggi"] },
+  { id: "scoopy", name: "Scoopy", type: "Matic retro", cc: 110, daily: 70000, weekly: 420000, monthly: 1500000, tag: "Paling murah", image: "/gaspol/scoopy.png", perks: ["Ringan & lincah", "Irit bensin", "Bagasi helm"] },
+  { id: "nmax", name: "NMax", type: "Maxi scooter", cc: 155, daily: 120000, weekly: 750000, monthly: 2600000, tag: "Favorit turis", image: "/gaspol/nmax.png", perks: ["Jok lebar berdua", "ABS", "Nyaman jarak jauh"] },
+  { id: "pcx", name: "PCX", type: "Maxi premium", cc: 160, daily: 130000, weekly: 800000, monthly: 2800000, tag: "Paling nyaman", image: "/gaspol/pcx.png", perks: ["Keyless", "Suspensi empuk", "Bagasi 30 L"] },
+  { id: "klx", name: "KLX", type: "Trail / dual-sport", cc: 150, daily: 200000, weekly: 1200000, monthly: 4200000, tag: "Buat petualang", image: "/gaspol/klx.png", perks: ["Jalan rusak? santai", "Ke air terjun & bukit", "Ground clearance tinggi"] },
 ];
 
 export const AREAS = [
