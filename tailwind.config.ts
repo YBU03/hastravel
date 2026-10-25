@@ -23,6 +23,10 @@ export default {
           "gold-light": "#e3cc9c",
           ivory: "#f5efe3",
         },
+        // Tema Armada Ria (Bold & Ceria)
+        ria: { yellow: "#ffcc00", ink: "#1a1a1a", orange: "#ff5a1f", cream: "#fff4c2", sky: "#7fd3ff" },
+        // Tema Langkah Nusa (Natural & Hangat)
+        nusa: { cream: "#f4ead8", sand: "#eadcc2", brown: "#3b2a20", terra: "#c8623d", sage: "#8fa382", moss: "#5d6e52" },
         brand: {
           50: "#eef5ff",
           100: "#d9e8ff",

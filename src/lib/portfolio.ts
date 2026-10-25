@@ -59,8 +59,9 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Bold & Ceria",
     description: "Bus untuk rombongan: kalkulator perkiraan harga, form penawaran, galeri bus & testimoni.",
     features: ["Kalkulator harga", "Form penawaran", "Galeri bus"],
-    status: "soon",
+    status: "demo",
     palette: ["#ffcc00", "#1a1a1a", "#ff5a1f", "#fff4c2"],
+    preview: "/portfolio/armada-ria.jpg",
   },
   {
     no: 5,
@@ -70,8 +71,9 @@ export const PORTFOLIO: PortfolioItem[] = [
     style: "Natural & Hangat",
     description: "Paket Bromo, Ijen, Nusa Penida: itinerary per hari, kuota peserta, termasuk/tidak termasuk.",
     features: ["Itinerary", "Kuota peserta", "Galeri trip"],
-    status: "soon",
+    status: "demo",
     palette: ["#f4ead8", "#3b2a20", "#c8623d", "#8fa382"],
+    preview: "/portfolio/langkah-nusa.jpg",
   },
   {
     no: 6,
