@@ -4,8 +4,8 @@ export const RIA_WA = "6281234567890";
 
 /** Foto dari pengguna; selama null halaman memakai ilustrasi bus. */
 export const IMAGES: { hero: string | null; gallery: (string | null)[] } = {
-  hero: null,
-  gallery: [null, null, null, null],
+  hero: "/armada-ria/hero.jpg",
+  gallery: ["/armada-ria/gallery-1.jpg", "/armada-ria/gallery-2.jpg", "/armada-ria/gallery-3.jpg", "/armada-ria/gallery-4.jpg"],
 };
 
 export type Bus = {
@@ -19,10 +19,10 @@ export type Bus = {
 };
 
 export const BUSES: Bus[] = [
-  { id: "big", name: "Big Bus", seats: 50, perDay: 3500000, color: "#ff5a1f", image: null, features: ["Toilet", "Karaoke", "Bagasi besar"] },
-  { id: "medium", name: "Medium Bus", seats: 31, perDay: 2500000, color: "#ffcc00", image: null, features: ["Reclining seat", "TV & audio", "USB charger"] },
-  { id: "elf", name: "Elf Long", seats: 19, perDay: 1500000, color: "#7fd3ff", image: null, features: ["AC dingin", "Lincah di jalan kecil", "Bagasi atas"] },
-  { id: "hiace", name: "Hiace Commuter", seats: 14, perDay: 1200000, color: "#b5e86b", image: null, features: ["Kabin nyaman", "Cocok keluarga", "Hemat"] },
+  { id: "big", name: "Big Bus", seats: 50, perDay: 3500000, color: "#ff5a1f", image: "/armada-ria/big.jpg", features: ["Toilet", "Karaoke", "Bagasi besar"] },
+  { id: "medium", name: "Medium Bus", seats: 31, perDay: 2500000, color: "#ffcc00", image: "/armada-ria/medium.jpg", features: ["Reclining seat", "TV & audio", "USB charger"] },
+  { id: "elf", name: "Elf Long", seats: 19, perDay: 1500000, color: "#7fd3ff", image: "/armada-ria/elf.jpg", features: ["AC dingin", "Lincah di jalan kecil", "Bagasi atas"] },
+  { id: "hiace", name: "Hiace Commuter", seats: 14, perDay: 1200000, color: "#b5e86b", image: "/armada-ria/hiace.jpg", features: ["Kabin nyaman", "Cocok keluarga", "Hemat"] },
 ];
 
 export const DISTANCES = [
