@@ -7,8 +7,8 @@ export const KENCANA_WA = "6281234567890";
  * Isi dengan path di public/kencana/ setelah file diunggah.
  */
 export const IMAGES: { hero: string | null; occasions: Record<string, string | null> } = {
-  hero: null,
-  occasions: { wedding: null, corporate: null, airport: null },
+  hero: "/kencana/hero.jpg",
+  occasions: { wedding: "/kencana/wedding.jpg", corporate: "/kencana/corporate.jpg", airport: "/kencana/airport.jpg" },
 };
 
 export type PackageId = "half" | "full" | "transfer";
@@ -33,7 +33,7 @@ export const UNITS: Unit[] = [
     seats: 6,
     luggage: 3,
     tag: "Paling diminati",
-    image: null,
+    image: "/kencana/alphard.jpg",
     prices: { half: 1800000, full: 2800000, transfer: 1200000 },
     features: ["Captain seat dengan pijat", "Ottoman & sandaran kaki", "Ambient light", "Sunroof"],
   },
@@ -44,7 +44,7 @@ export const UNITS: Unit[] = [
     seats: 4,
     luggage: 2,
     tag: "Paling eksklusif",
-    image: null,
+    image: "/kencana/lexus-lm.jpg",
     prices: { half: 4500000, full: 7000000, transfer: 2500000 },
     features: ["Partisi privasi + layar 48 inci", "Kursi kulit semi-anilin", "Kulkas mini", "Audio Mark Levinson"],
   },
@@ -55,7 +55,7 @@ export const UNITS: Unit[] = [
     seats: 10,
     luggage: 6,
     tag: "Untuk rombongan",
-    image: null,
+    image: "/kencana/hiace-luxury.jpg",
     prices: { half: 1600000, full: 2500000, transfer: 1100000 },
     features: ["Captain seat kulit", "Kabin tinggi & lega", "TV & karaoke", "Bagasi besar"],
   },
@@ -65,7 +65,7 @@ export const UNITS: Unit[] = [
     variant: "Hybrid Q",
     seats: 6,
     luggage: 3,
-    image: null,
+    image: "/kencana/zenix.jpg",
     prices: { half: 900000, full: 1400000, transfer: 600000 },
     features: ["Hybrid, senyap & hemat", "Captain seat baris kedua", "Panoramic roof", "Charger nirkabel"],
   },
