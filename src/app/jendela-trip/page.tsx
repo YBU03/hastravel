@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { rupiah } from "@/lib/format";
-import { JendelaFooter, JendelaNav, paperTexture, PosterArt, Stamp, Sunburst } from "./_components/Retro";
+import { JendelaFooter, JendelaNav, paperTexture, PostcardArt, type PostcardScene, PosterArt, Stamp, Sunburst } from "./_components/Retro";
 import { SearchBox } from "./_components/SearchBox";
 import { PERKS, POSTERS } from "./data";
 
-const STORIES = [
-  { name: "Dewi, Bandung", text: "Tiket Bali + hotel 3 malam langsung beres di satu chat. Agennya sabar banget jawab pertanyaan." },
-  { name: "Pak Rudi, Surabaya", text: "Pesawat di-reschedule maskapai, Jendela Trip yang urus semua. Saya tinggal terima tiket baru." },
-  { name: "Tim HR PT Maju", text: "Langganan untuk dinas kantor. Invoice rapi, harga jelas, selalu cepat." },
+const STORIES: { name: string; scene: PostcardScene; place: string; text: string }[] = [
+  { name: "Dewi, Bandung", scene: "beach", place: "Salam dari Bali", text: "Tiket Bali + hotel 3 malam langsung beres di satu chat. Agennya sabar banget jawab pertanyaan." },
+  { name: "Pak Rudi, Surabaya", scene: "plane", place: "Salam dari udara", text: "Pesawat di-reschedule maskapai, Jendela Trip yang urus semua. Saya tinggal terima tiket baru." },
+  { name: "Tim HR PT Maju", scene: "city", place: "Salam dari Jakarta", text: "Langganan untuk dinas kantor. Invoice rapi, harga jelas, selalu cepat." },
 ];
 
 export default function JendelaHome() {
@@ -88,10 +88,18 @@ export default function JendelaHome() {
         <h2 className="font-display text-4xl uppercase md:text-5xl">Kartu pos dari pelanggan</h2>
         <div className="mt-10 grid gap-8 md:grid-cols-3">
           {STORIES.map((s, i) => (
-            <figure key={s.name} className={`relative border-[3px] border-jendela-ink bg-jendela-cream p-6 shadow-[6px_6px_0_#2d1e12] ${i === 1 ? "rotate-1" : "-rotate-1"}`}>
-              <div className="absolute right-4 top-4 h-14 w-12 border-2 border-dashed border-jendela-red bg-jendela-mustard/40" aria-hidden />
-              <blockquote className="pr-14 text-lg leading-relaxed">“{s.text}”</blockquote>
-              <figcaption className="mt-5 border-t-2 border-dashed border-jendela-ink/30 pt-3 font-display text-sm uppercase">{s.name}</figcaption>
+            <figure key={s.name} className={`relative border-[3px] border-jendela-ink bg-jendela-cream p-4 shadow-[6px_6px_0_#2d1e12] ${i === 1 ? "rotate-1" : "-rotate-1"}`}>
+              <div className="relative">
+                <PostcardArt scene={s.scene} className="block w-full border-[3px] border-jendela-ink" />
+                <span className="absolute bottom-2 left-2 bg-jendela-cream px-2 py-0.5 font-display text-xs uppercase">{s.place}</span>
+                <span className="absolute -right-2 -top-2 grid h-12 w-12 rotate-6 place-items-center rounded-full border-2 border-dashed border-jendela-red bg-jendela-cream text-center font-display text-[8px] uppercase leading-tight text-jendela-red">
+                  Pos
+                  <br />
+                  Jendela
+                </span>
+              </div>
+              <blockquote className="mt-4 text-lg leading-relaxed">“{s.text}”</blockquote>
+              <figcaption className="mt-4 border-t-2 border-dashed border-jendela-ink/30 pt-3 font-display text-sm uppercase">{s.name}</figcaption>
             </figure>
           ))}
         </div>

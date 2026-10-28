@@ -32,13 +32,13 @@ export const HOTEL_CLASSES = [
   { id: "5", name: "Bintang 5 / resort", perNight: 1900000 },
 ];
 
-export type Poster = { id: string; city: string; tagline: string; price: number; from: string; to: string; bg: string; sun: string; land: string };
+export type Poster = { id: string; city: string; tagline: string; price: number; from: string; to: string; bg: string; sun: string; land: string; image: string | null };
 
 export const POSTERS: Poster[] = [
-  { id: "bali", city: "Bali", tagline: "Pulau Dewata", price: 650000, from: "CGK", to: "DPS", bg: "#e2a72e", sun: "#d6452b", land: "#2f7f7a" },
-  { id: "bajo", city: "Labuan Bajo", tagline: "Negeri Komodo", price: 1150000, from: "CGK", to: "LBJ", bg: "#2f7f7a", sun: "#e2a72e", land: "#2d1e12" },
-  { id: "jogja", city: "Yogyakarta", tagline: "Kota Budaya", price: 650000, from: "CGK", to: "YIA", bg: "#d6452b", sun: "#f3e7cf", land: "#2d1e12" },
-  { id: "rajaampat", city: "Raja Ampat", tagline: "Surga Timur", price: 1900000, from: "CGK", to: "SOQ", bg: "#2d1e12", sun: "#e2a72e", land: "#2f7f7a" },
+  { id: "bali", city: "Bali", tagline: "Pulau Dewata", price: 650000, from: "CGK", to: "DPS", bg: "#e2a72e", sun: "#d6452b", land: "#2f7f7a", image: null },
+  { id: "bajo", city: "Labuan Bajo", tagline: "Negeri Komodo", price: 1150000, from: "CGK", to: "LBJ", bg: "#2f7f7a", sun: "#e2a72e", land: "#2d1e12", image: null },
+  { id: "jogja", city: "Yogyakarta", tagline: "Kota Budaya", price: 650000, from: "CGK", to: "YIA", bg: "#d6452b", sun: "#f3e7cf", land: "#2d1e12", image: null },
+  { id: "rajaampat", city: "Raja Ampat", tagline: "Surga Timur", price: 1900000, from: "CGK", to: "SOQ", bg: "#2d1e12", sun: "#e2a72e", land: "#2f7f7a", image: null },
 ];
 
 export const PERKS = [

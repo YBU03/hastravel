@@ -32,6 +32,22 @@ export function PosterArt({ p, className = "" }: { p: Poster; className?: string
   return (
     <svg viewBox="0 0 300 400" className={className} role="img" aria-label={`Poster ${p.city}`}>
       <rect width="300" height="400" fill={p.bg} />
+      {p.image ? (
+        <>
+          <image href={p.image} width="300" height="400" preserveAspectRatio="xMidYMid slice" style={{ filter: "sepia(.35) saturate(1.2) contrast(1.05)" }} />
+          <rect width="300" height="400" fill={p.bg} opacity=".22" style={{ mixBlendMode: "multiply" }} />
+          <rect x="8" y="8" width="284" height="384" fill="none" stroke="#faf3e3" strokeWidth="3" opacity=".8" />
+        </>
+      ) : (
+        <PosterScene p={p} />
+      )}
+    </svg>
+  );
+}
+
+function PosterScene({ p }: { p: Poster }) {
+  return (
+    <>
       <g opacity=".25">
         {Array.from({ length: 18 }, (_, i) => (
           <path key={i} d="M150 230 L146 0 H154 Z" fill="#faf3e3" transform={`rotate(${i * 20 - 170} 150 230)`} />
@@ -61,6 +77,90 @@ export function PosterArt({ p, className = "" }: { p: Poster; className?: string
         </>
       )}
       <path d="M0 340 C 50 330 100 350 150 340 S 250 330 300 340" stroke="#faf3e3" strokeWidth="3" fill="none" opacity=".6" />
+    </>
+  );
+}
+
+export type PostcardScene = "beach" | "plane" | "city";
+
+/** Flat illustration on the front of each customer postcard. */
+export function PostcardArt({ scene, className = "" }: { scene: PostcardScene; className?: string }) {
+  const ink = "#2d1e12", red = "#d6452b", mustard = "#e2a72e", teal = "#2f7f7a", cream = "#faf3e3", paper = "#f3e7cf";
+  return (
+    <svg viewBox="0 0 300 180" className={className} aria-hidden>
+      {scene === "beach" && (
+        <>
+          <rect width="300" height="180" fill={mustard} />
+          <circle cx="225" cy="62" r="30" fill={red} />
+          <path d="M0 105 C 60 95 120 112 180 102 S 270 98 300 104 V140 H0 Z" fill={teal} />
+          <path d="M0 122 C 50 116 100 126 150 120 S 250 116 300 122" stroke={cream} strokeWidth="3" fill="none" opacity=".7" />
+          <path d="M0 140 C 80 128 200 132 300 138 V180 H0 Z" fill={paper} />
+          {/* palm */}
+          <path d="M52 150 C 56 120 60 95 70 70" stroke={ink} strokeWidth="6" fill="none" strokeLinecap="round" />
+          <path d="M70 70 C 50 58 32 62 22 74 C 40 66 55 68 70 70 Z M70 70 C 82 52 100 48 114 54 C 98 56 84 62 70 70 Z M70 70 C 62 50 66 36 76 28 C 72 44 72 56 70 70 Z M70 70 C 90 64 106 72 112 84 C 98 74 84 72 70 70 Z" fill={teal} stroke={ink} strokeWidth="2.5" strokeLinejoin="round" />
+          {/* umbrella + chair */}
+          <path d="M150 112 L158 162" stroke={ink} strokeWidth="3" />
+          <path d="M120 116 C 128 92 176 86 194 106 Z" fill={red} stroke={ink} strokeWidth="2.5" strokeLinejoin="round" />
+          <path d="M138 112 C 150 102 160 100 172 104" stroke={cream} strokeWidth="2" fill="none" />
+          <path d="M172 162 L186 146 H220 L210 162 M190 146 L182 132" stroke={ink} strokeWidth="3" fill="none" strokeLinecap="round" />
+          {/* suitcase */}
+          <rect x="232" y="138" width="30" height="24" rx="3" fill={cream} stroke={ink} strokeWidth="2.5" />
+          <path d="M241 138 V132 H253 V138 M232 150 H262" stroke={ink} strokeWidth="2.5" fill="none" />
+        </>
+      )}
+      {scene === "plane" && (
+        <>
+          <rect width="300" height="180" fill={teal} />
+          <g opacity=".2">
+            {Array.from({ length: 10 }, (_, i) => (
+              <path key={i} d="M150 200 L147 0 H153 Z" fill={cream} transform={`rotate(${i * 18 - 81} 150 200)`} />
+            ))}
+          </g>
+          {[[40, 130, 1], [210, 140, 1.3], [120, 160, 1.1]].map(([x, y, k]) => (
+            <path key={x} d={`M${x} ${y} h${70 * k} a${12 * k} ${12 * k} 0 0 0 -${14 * k} -${16 * k} a${16 * k} ${16 * k} 0 0 0 -${30 * k} -${6 * k} a${12 * k} ${12 * k} 0 0 0 -${26 * k} ${22 * k} Z`} fill={cream} stroke={ink} strokeWidth="2.5" strokeLinejoin="round" />
+          ))}
+          {/* plane */}
+          <g transform="translate(150 78) rotate(-12)" stroke={ink} strokeWidth="2.5" strokeLinejoin="round">
+            <path d="M-70 0 C -70 -10 -60 -14 -40 -14 H50 C 66 -14 76 -6 78 0 C 76 6 66 10 50 10 H-40 C -60 10 -70 8 -70 0 Z" fill={cream} />
+            <path d="M-10 -2 L-34 -42 H-20 L18 -2 Z M-10 6 L-28 36 H-16 L14 6 Z M-58 -6 L-66 -30 H-56 L-42 -8 Z" fill={red} />
+            <path d="M58 -8 C 64 -8 70 -4 72 0 H58 Z" fill={ink} />
+            {[-30, -14, 2, 18, 34].map((x) => (
+              <circle key={x} cx={x} cy="-3" r="2.6" fill={mustard} />
+            ))}
+          </g>
+          {/* calendar with reschedule arrow */}
+          <g transform="translate(232 18)">
+            <rect width="52" height="50" rx="4" fill={cream} stroke={ink} strokeWidth="2.5" />
+            <rect width="52" height="14" rx="4" fill={red} stroke={ink} strokeWidth="2.5" />
+            <path d="M14 34 C 14 24 34 22 38 30 M38 30 L39 22 M38 30 L30 30" stroke={ink} strokeWidth="2.5" fill="none" strokeLinecap="round" />
+          </g>
+        </>
+      )}
+      {scene === "city" && (
+        <>
+          <rect width="300" height="180" fill={red} />
+          <circle cx="70" cy="58" r="26" fill={mustard} />
+          {[
+            [20, 70, 40], [62, 50, 30], [96, 90, 44], [144, 40, 34], [182, 76, 40], [226, 56, 30], [260, 84, 40],
+          ].map(([x, h, w], i) => (
+            <g key={x}>
+              <rect x={x} y={150 - h} width={w} height={h} fill={i % 2 ? ink : teal} stroke={ink} strokeWidth="2.5" />
+              {Array.from({ length: Math.floor(h / 18) }, (_, r) => (
+                <rect key={r} x={x + 8} y={150 - h + 10 + r * 18} width={w - 16} height="6" fill={cream} opacity=".75" />
+              ))}
+            </g>
+          ))}
+          <rect y="150" width="300" height="30" fill={paper} />
+          {/* briefcase + invoice */}
+          <rect x="112" y="128" width="54" height="38" rx="4" fill={mustard} stroke={ink} strokeWidth="2.5" />
+          <path d="M128 128 V120 H150 V128 M112 142 H166" stroke={ink} strokeWidth="2.5" fill="none" />
+          <g transform="translate(184 112) rotate(6)">
+            <rect width="40" height="52" fill={cream} stroke={ink} strokeWidth="2.5" />
+            <path d="M8 12 H32 M8 22 H32 M8 32 H24" stroke={ink} strokeWidth="2.5" />
+            <path d="M22 40 L27 45 L36 35" stroke={teal} strokeWidth="3" fill="none" strokeLinecap="round" />
+          </g>
+        </>
+      )}
     </svg>
   );
 }
