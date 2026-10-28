@@ -3,7 +3,7 @@
 export const NUSA_WA = "6281234567890";
 
 /** Foto dari pengguna; selama null halaman memakai ilustrasi. */
-export const HERO_IMAGE: string | null = null;
+export const HERO_IMAGE: string | null = "/langkah-nusa/hero.jpg";
 
 export type Scene = "mountain" | "crater" | "sea" | "waterfall";
 export type Category = "gunung" | "pantai" | "air-terjun";
@@ -46,7 +46,7 @@ export const TRIPS: Trip[] = [
     quota: 12,
     departDays: [6],
     meetingPoint: "Stasiun Malang Kota Baru",
-    image: null,
+    image: "/langkah-nusa/bromo-sunrise.jpg",
     summary: "Matahari terbit dari Penanjakan, lautan pasir, dan kawah Bromo yang masih berasap.",
     itinerary: [
       {
@@ -81,7 +81,7 @@ export const TRIPS: Trip[] = [
     quota: 10,
     departDays: [5],
     meetingPoint: "Stasiun Ketapang, Banyuwangi",
-    image: null,
+    image: "/langkah-nusa/ijen-blue-fire.jpg",
     summary: "Api biru langka di dunia, danau kawah toska, dan penambang belerang tradisional.",
     itinerary: [
       {
@@ -116,7 +116,7 @@ export const TRIPS: Trip[] = [
     quota: 12,
     departDays: [4],
     meetingPoint: "Stasiun Malang Kota Baru",
-    image: null,
+    image: "/langkah-nusa/bromo-ijen.jpg",
     summary: "Dua gunung paling ikonik Jawa Timur dalam satu perjalanan, dari Malang sampai Banyuwangi.",
     itinerary: [
       {
@@ -156,7 +156,7 @@ export const TRIPS: Trip[] = [
     quota: 14,
     departDays: [0, 3, 6],
     meetingPoint: "Pelabuhan Sanur",
-    image: null,
+    image: "/langkah-nusa/nusa-penida.jpg",
     summary: "Kelingking Beach, Broken Beach, Angel's Billabong, dan Crystal Bay dalam satu hari.",
     itinerary: [
       {
@@ -185,7 +185,7 @@ export const TRIPS: Trip[] = [
     quota: 12,
     departDays: [0, 6],
     meetingPoint: "Stasiun Malang Kota Baru",
-    image: null,
+    image: "/langkah-nusa/tumpak-sewu.jpg",
     summary: "Air terjun tirai raksasa dengan latar Semeru, turun ke dasar lembah dan Goa Tetes.",
     itinerary: [
       {
