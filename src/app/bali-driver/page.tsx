@@ -33,7 +33,7 @@ export default function BaliDriverHome() {
               </a>
             </div>
           </div>
-          <Plate src={IMAGES.hero} alt="A driver waiting by the car on a rice-field road" caption="Tegallalang, 6.40 am" className="aspect-[16/10] w-full" />
+          <Plate src={IMAGES.hero} alt="A driver waiting by the car on a rice-field road" caption="Tegallalang, Ubud" className="aspect-[16/10] w-full" />
         </div>
       </section>
 

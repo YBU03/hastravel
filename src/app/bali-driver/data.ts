@@ -9,9 +9,9 @@ export const usd = (idr: number) => `≈ US$${Math.round(idr / USD_RATE)}`;
 
 /** Images from the client; while null the page shows editorial placeholders. */
 export const IMAGES: { hero: string | null; routes: Record<string, string | null>; drivers: Record<string, string | null> } = {
-  hero: null,
-  routes: { ubud: null, uluwatu: null, kintamani: null, east: null },
-  drivers: { wayan: null, made: null, komang: null },
+  hero: "/bali-driver/hero.jpg",
+  routes: { ubud: "/bali-driver/ubud.jpg", uluwatu: "/bali-driver/uluwatu.jpg", kintamani: "/bali-driver/kintamani.jpg", east: "/bali-driver/east.jpg" },
+  drivers: { wayan: "/bali-driver/wayan.jpg", made: "/bali-driver/made.jpg", komang: "/bali-driver/komang.jpg" },
 };
 
 export type Rate = { id: string; hours: number; name: string; price: number; note: string };

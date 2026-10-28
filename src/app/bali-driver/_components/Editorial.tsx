@@ -18,7 +18,12 @@ export function Plate({
     return (
       <figure className={`relative overflow-hidden ${className}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt={alt} className="h-full w-full object-cover" />
+        <img src={src} alt={alt} className="absolute inset-0 h-full w-full object-cover" />
+        {caption && (
+          <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 pt-12 font-display text-xl italic leading-tight text-white md:text-2xl">
+            {caption}
+          </figcaption>
+        )}
       </figure>
     );
   }
